@@ -27,17 +27,22 @@ import sdl1inc/timer
 import sdl1inc/version
 import sdl1inc/video
 
-when defined posix:
+when defined macosx:
+  const libpaths = [
+    "libSDL-1.2.0.dylib",
+    "libSDL.dylib"
+  ]
+elif defined posix:
   const libpaths = [
     "libSDL-1.2.so",
     "libSDL-1.2.so.0",
     "libSDL-1.2.so.1",
     "libSDL-1.2.so.1.2.68",
   ]
-elif defined macosx:
-  const libpaths = ["libSDL-1.2.0.dylib"]
 elif defined windows:
-  const libpaths = ["SDL.dll"]
+  const libpaths = [
+    "SDL.dll"
+  ]
 else:
   {.fatal: "unsupported platform for SDL 1.2.".}
 
