@@ -43,6 +43,7 @@
 ##  ```
 ##  nim c -d=sdl1.audio=0 file(s)
 ##  ```
+##
 #[
   SPDX-License-Identifier: NCSA OR MIT OR LGPL-2.1-only
 ]#
@@ -58,31 +59,28 @@ import nsdl1/utils
 
 export open_sdl1_library, close_sdl1_library, last_sdl1_error
 
-import nsdl1/sdl1inc/active
+import nsdl1/sdl1inc/sdl1active
+export sdl1active
 when enable_audio:
-  import nsdl1/sdl1inc/audio
-import nsdl1/sdl1inc/events
-import nsdl1/sdl1inc/init
+  import nsdl1/sdl1inc/sdl1audio
+  export sdl1audio
+import nsdl1/sdl1inc/sdl1events
+export sdl1events
+import nsdl1/sdl1inc/sdl1init
+export sdl1init
 when enable_joystick:
-  import nsdl1/sdl1inc/joystick
-import nsdl1/sdl1inc/keyboard
-import nsdl1/sdl1inc/keysym
+  import nsdl1/sdl1inc/sdl1joystick
+import nsdl1/sdl1inc/sdl1keyboard
+export sdl1keyboard
+import nsdl1/sdl1inc/sdl1keysym
+export sdl1keysym
 when enable_mouse:
-  import nsdl1/sdl1inc/mouse
-import nsdl1/sdl1inc/rwops
-import nsdl1/sdl1inc/timer
-import nsdl1/sdl1inc/video
-
-export active
-when enable_audio:
-  export audio
-export events
-export init
-export keyboard
-export keysym
-when enable_mouse:
-  export mouse
-export video
+  import nsdl1/sdl1inc/sdl1mouse
+  export sdl1mouse
+import nsdl1/sdl1inc/sdl1rwops
+import nsdl1/sdl1inc/sdl1timer
+import nsdl1/sdl1inc/sdl1video
+export sdl1video
 
 # =========================================================================== #
 # ==  SDL 1.2 library functions                                            == #

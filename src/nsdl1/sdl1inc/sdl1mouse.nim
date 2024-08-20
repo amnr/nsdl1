@@ -5,7 +5,7 @@
 
 {.push raises: [].}
 
-from video import Rect
+from sdl1video import Rect
 
 type
   WMcursor {.final, incompleteStruct, pure.} = object

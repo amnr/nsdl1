@@ -1,31 +1,28 @@
 ##  SDL 1.2 ABI.
+##
 #[
   SPDX-License-Identifier: NCSA OR MIT OR LGPL-2.1-only
 ]#
 
 {.push raises: [].}
 
-# XXX:
-# when NimMajor >= 2:
-#   import std/assertions
-
-import dlutils
+import pkg/dlutils
 
 import config
 
 when enable_audio:
-  import sdl1inc/audio
-import sdl1inc/events
-import sdl1inc/init
+  import sdl1inc/sdl1audio
+import sdl1inc/sdl1events
+import sdl1inc/sdl1init
 when enable_joystick:
-  import sdl1inc/joystick
-import sdl1inc/keysym
+  import sdl1inc/sdl1joystick
+import sdl1inc/sdl1keysym
 when enable_mouse:
-  import sdl1inc/mouse
-import sdl1inc/rwops
-import sdl1inc/timer
-import sdl1inc/version
-import sdl1inc/video
+  import sdl1inc/sdl1mouse
+import sdl1inc/sdl1rwops
+import sdl1inc/sdl1timer
+import sdl1inc/sdl1version
+import sdl1inc/sdl1video
 
 when defined macosx:
   const libpaths = [

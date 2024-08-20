@@ -1,4 +1,5 @@
 ##  SDL1 config.
+##
 #[
   SPDX-License-Identifier: NCSA OR MIT OR LGPL-2.1-only
 ]#

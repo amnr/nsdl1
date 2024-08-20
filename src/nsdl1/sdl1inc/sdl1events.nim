@@ -5,10 +5,10 @@
 
 {.push raises: [].}
 
-import keyboard
-from active import AppState
-from joystick import HatPosition
-from mouse import MouseButton
+import sdl1keyboard
+from sdl1active import AppState
+from sdl1joystick import HatPosition
+from sdl1mouse import MouseButton
 
 # XXX: TODO: make it an enum?
 type

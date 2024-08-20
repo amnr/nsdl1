@@ -5,7 +5,7 @@
 
 {.push raises: [].}
 
-import keysym
+import sdl1keysym
 
 type
   Keysym* {.final, pure.} = object
