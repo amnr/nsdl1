@@ -96,7 +96,7 @@ converter from_sdl_bool(b: SdlBool): bool =
 # converter to_sdl_bool(b: bool): SdlBool =
 #   b.Bool
 
-proc c_free(mem: pointer) {.header: "<stdlib.h>", importc: "free", nodecl.}
+#proc c_free(mem: pointer) {.header: "<stdlib.h>", importc: "free", nodecl.}
 
 # --------------------------------------------------------------------------- #
 # <SDL/SDL.h>                                                                 #
@@ -628,7 +628,6 @@ proc RemoveTimer*(t: TimerID): bool {.discardable.} =
   ##  Returns a `bool` value indicating success.
   ##
   ##  Original name: `SDL_RemoveTimer`
-  {.warning: "print a warning?".}
   SDL_RemoveTimer t
 
 proc SetTimer*(interval: uint32, callback: TimerCallback): bool =

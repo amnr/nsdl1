@@ -47,6 +47,8 @@ else:
 # ==  SDL 1.2 library object                                               == #
 # =========================================================================== #
 
+{.push hint[GlobalVar]: off.}
+
 dlgencalls "sdl1", libpaths:
 
   # ------------------------------------------------------------------------- #
@@ -657,5 +659,7 @@ dlgencalls "sdl1", libpaths:
   proc SDL_WM_ToggleFullScreen(
     surface   : ptr Surface
   ): cint
+
+{.push hint[GlobalVar]: on.}
 
 # vim: set sts=2 et sw=2:
